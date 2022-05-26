@@ -1,0 +1,136 @@
+body {
+    background-color: black;
+    padding: 30px;  
+    max-height: 30px;
+    width: 330px;
+    overflow: hidden;
+  }
+  #namek {
+      background-image: url(namek.jpg);
+      height: 600px;
+      width:860px;
+  }
+  #goku {
+      background-image: url(goku.png) ;
+    background-color: transparent;
+      height: 60px ;
+      width: 45px ;
+  }
+  #gokuup {
+      background-image: url(gokuup.png) ;
+    background-color: transparent;
+      height: 60px ;
+      width: 45px ;
+  }
+  #gokudown {
+      background-image: url(gokudown.png) ;
+    background-color: transparent;
+      height: 51px ;
+      width: 48px ;
+  }
+  #gokuright {
+      background-image: url(gokuright.png) ;
+    background-color: transparent;
+      height: 50px ;
+      width: 68px ;
+  }
+  #gokuleft {
+      background-image: url(gokuleft.png) ;
+    background-color: transparent;
+      height: 53px ;
+      width: 70px ;
+  }
+  #gokukamehameha {
+      background-image: url(gokukamehameha.png) ;
+    background-color: transparent;
+      height: 60px ;
+      width: 56px ;
+  }
+  #kamehameha {
+      background-image: url(kamehameha.gif) ;
+    background-color: transparent;
+      height: 24px ;
+      width: 24px ;
+  }
+  #minicell {
+      background-image: url(minicell.png) ;
+    background-color: transparent;
+      height: 56px ;
+      width: 44px ;
+  }
+  #disparominicell {
+      background-image: url(disparominicell.png) ;
+    background-color: transparent;
+      height: 30px ;
+      width: 31px ;
+  }
+  #barradevidagoku {
+      background-image: url(barravidagoku.png) ;
+    background-color: transparent;
+      height: 24px ;
+      width: 170px ;
+  }
+  #barradevidaminicell {
+      background-image: url(barravidaminicell.png) ;
+    background-color: transparent;
+      height: 24px ;
+      width: 170px ;
+  }
+  #cuadrodevidagoku {
+      background-image: url(cuadrovidagoku.png) ;
+    background-color: transparent;
+      height: 32px ;
+      width: 192px ;
+  }
+  #cuadrodevidaminicell {
+      background-image: url(cuadrovidaminicell.png) ;
+    background-color: transparent;
+      height: 32px ;
+      width: 192px ;
+  }
+
+  <div id="namek"></div>
+  <div id="Goku"></div>
+  <div id="gokuup"></div>
+  <div id="gokudown"></div>
+  <div id="gokuleft"></div>
+  <div id="gokuright"></div>
+  <div id="gokukamehameha"></div>
+  <div id="minicell"></div>
+  <div id="kamehameha"></div>
+  <div id="disparominicell"></div>
+  <div id="barravidagoku"></div>
+  <div id="barravidaminicell"></div>
+  <div id="cuadrovidagoku"></div>
+  <div id="cuadrovidaminicell"></div>
+  <body>
+    <div id='background'>
+        <div id='character' style='position:absolute; top:100px; left:450px; background-image: url("img/down1.png"); width:59px; height:86px;'></div>
+    </div>
+    <script type="text/javascript">
+        var leftValue = 450, topValue = 100;
+
+        function update(){
+            document.getElementById("character").style.left = leftValue+"px";
+            document.getElementById("character").style.top = topValue+"px";
+        }
+
+        document.onkeydown = function(e){
+            console.log(e);
+            if(e.keyCode == 37 && leftValue > 0) { // LEFT
+                leftValue = leftValue - 10;
+            }
+            else if (e.keyCode == 39 && leftValue < 500) { // RIGHT
+                leftValue = leftValue + 10;    		
+            }
+            else if (e.keyCode == 40 && topValue < 500) { // DOWN
+                topValue = topValue + 10;
+            }
+            else if (e.keyCode == 38 && topValue > 0) { // UP
+                topValue = topValue - 10;
+            }
+            // ...
+            update();
+        }
+    </script>
+</body>
